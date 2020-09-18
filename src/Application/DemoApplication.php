@@ -59,6 +59,18 @@ class DemoApplication extends Application
     }
 
     /**
+     * Handles incomming binary data/requests.
+     *
+     * @param string $data
+     * @param Connection $client
+     * @return void
+     */
+    public function onBinaryData(string $data, Connection $client): void 
+    {
+        throw new \RuntimeException('Not implemented');
+    }
+
+    /**
      * Echoes data back to client(s).
      *
      * @param string $text

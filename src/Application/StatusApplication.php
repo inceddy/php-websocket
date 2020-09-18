@@ -74,6 +74,18 @@ class StatusApplication extends Application
     }
 
     /**
+     * This application does not expect any incomming client binary data.
+     *
+     * @param string $data
+     * @param Connection $client
+     * @return void
+     */
+    public function onBinaryData(string $data, Connection $client): void 
+    {
+        // currently not in use...
+    }
+
+    /**
      * Sets basic server data.
      *
      * @param array $serverInfo

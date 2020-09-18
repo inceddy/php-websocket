@@ -264,7 +264,7 @@ class Connection
                 $this->application->onData($decodedData['payload'], $this);
                 break;
             case 'binary':
-                $this->close(1003);
+                $this->application->onBinaryData($decodedData['payload'], $this);
                 break;
             case 'ping':
                 $this->send($decodedData['payload'], 'pong', false);
@@ -396,6 +396,11 @@ class Connection
                 $frameHead[0] = 129;
                 break;
 
+            case 'binary':
+                // first byte indicates FIN, Text-Frame (10000001):
+                $frameHead[0] = 129;
+                break;
+
             case 'close':
                 // first byte indicates FIN, Close Frame(10001000):
                 $frameHead[0] = 136;
@@ -484,6 +489,7 @@ class Connection
             case 1:
                 $decodedData['type'] = 'text';
                 break;
+            // binary frame
             case 2:
                 $decodedData['type'] = 'binary';
                 break;

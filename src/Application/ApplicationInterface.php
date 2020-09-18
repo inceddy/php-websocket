@@ -31,6 +31,14 @@ interface ApplicationInterface
     public function onData(string $data, Connection $client): void;
 
     /**
+     * This method is triggered when the server recieves new binary data.
+     *
+     * @param string $data
+     * @param Connection $client
+     */
+    public function onBinaryData(string $data, Connection $client): void;
+
+    /**
      * Creates and returns a new instance of the application.
      *
      * @return ApplicationInterface
