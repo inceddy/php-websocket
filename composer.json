@@ -1,5 +1,5 @@
 {
-    "name": "bloatless/php-websocket",
+    "name": "typeshare/php-websocket",
     "description": "A simple WebSocket Server and Client implementation in PHP.",
     "keywords": [
         "php",
@@ -13,6 +13,10 @@
         {
             "name": "Simon Samtleben",
             "email": "simon@bloatless.org"
+        },
+        {
+            "name": "Philipp Steingrebe",
+            "email": "philipp@steingrebe.de"
         }
     ],
     "autoload": {
